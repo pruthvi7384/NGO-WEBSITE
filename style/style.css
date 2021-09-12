@@ -1,0 +1,656 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+:root{
+    --color1:#2C3E50;
+    --color2:#ffffff;
+    --color3:#6A6A6A;
+    --color4:#000066;
+    --color5:#1DA1F2;
+    --font-w1:500;
+    --font-w2:700;
+    --font1:'Lobster', cursive;
+    --font2:'Roboto', sans-serif;
+}
+body{
+    font-family:var(--font2);
+}
+/* =====Comman======= */
+    ul{
+        list-style-type: none;
+    }
+    a{
+        text-decoration: none;
+    }
+/* ===X==Comman==X==== */
+
+/* ===========Global Classes============= */
+    .container{
+        width: 100%;
+    }
+    .d-flex{
+        display:flex;
+    }
+    .btn{
+        text-transform: capitalize;
+        padding:10px 20px;
+        border:none;
+        outline:none;
+        cursor:pointer;
+        border-radius:5px;
+    }
+    .mt-2{
+        margin-top:25px;
+    }
+    .ml-2{
+        margin-left:20px;
+    }
+    .padding{
+        padding:25px 50px;
+    }
+    .read-more-btn{
+        color:var(--color2);
+        background-color:var(--color5);
+    }
+    .donate{
+        color:var(--color2);
+        background-color:var(--color4);
+    }
+    .col-2{
+        flex-basis: 25%;
+        padding:20px;
+    }
+    .col-3{
+        flex-basis:35%;
+        padding:20px;
+    }
+    .col-6{
+        flex-basis: 50%;
+        padding:20px;
+    }
+    .row{
+        justify-content:space-evenly;
+        align-items:center;
+    }
+    .row img{
+        width:100%;
+    }
+/* ========X===Global Classes===X========== */
+
+/* ============Home Page Styling============= */
+    /* ==========Navigation Bar========= */
+        .navbar{
+           position:sticky;
+           top:0;
+           background-color:#E8F8F5;
+           box-shadow:0px 0px 16px 4px var(--color4);
+        }
+        nav{
+            padding:10px;
+            justify-content: space-between;
+            align-items:center;
+        }
+        nav .nav-brand a{
+            font-size:35px;
+            font-family: var(--font1);
+            color:var(--color4);
+            font-weight:bold;
+        }
+        nav .nav-brand .fa-hands-helping{
+            font-size:40px;
+        }
+        .toggle{
+            position:absolute;
+            right:10px;
+            font-size:30px;
+            color: var(--color1);
+            display: none;
+        }
+        nav .nav-menu ul,nav .social ul{
+            justify-content:space-evenly;
+            align-items:center;
+        }
+        nav .social ul li a{
+            margin:0px 10px;
+            padding:3px 10px;
+            font-size:20px;
+            text-transform:capitalize;
+            transition: all 0.5s ease-in-out;
+        }
+        nav .nav-menu ul li a{
+            margin:0px 10px;
+            padding:3px 10px;
+            font-size:20px;
+            color:var(--color4);
+            text-transform:capitalize;
+            font-weight: var(--font-w1);
+            transition: all 0.5s ease-in-out;
+        }
+        nav .nav-menu ul li a:hover{
+            background-color:var(--color4);
+            color:var(--color2);
+            border-radius: 5px;
+        }
+        ul li a .fa-instagram{
+            color:var(--color2);
+            padding:2px;
+            border-radius: 3px;
+            background:radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+        }
+        ul li a .fa-twitter{
+            color:#1DA1F2;
+        }
+        ul li a .fa-facebook-f{
+            color:#3b5998;
+        }
+        /* =========Navigation Responsive====== */
+            @media(max-width:1000px){
+                nav{
+                    flex-direction: column;
+                }
+                nav .nav-menu,nav .social{
+                    margin-top:20px;
+                }
+            }
+            @media(max-width:768px){
+                nav{
+                    justify-content: flex-start;
+                }
+                nav .nav-menu ul{
+                    flex-direction: column;
+                }
+                nav .nav-menu ul li{
+                   margin-top:10px;
+                }
+                nav .nav-menu ul li a{
+                    font-size: 25px;
+                }
+                .toggle{
+                    display:initial;
+                }
+                .nav-collapas{
+                    display:none;
+                    transform:0.5s ease-in-out;
+                }
+                .nav-collapas-show{
+                    display:initial;
+                }
+            }
+
+        /* =======X==Navigation Responsive===X=== */
+    /* ========X==Navigation Bar===X====== */
+
+    /* ==========Banner Styling========== */
+        .banner-top{
+            background-image: linear-gradient(to top, rgb(12, 52, 131,0.8) 0%, rgb(162, 182, 223,0.8) 100%, rgb(107, 140, 206,0.8) 100%, rgb(162, 182, 223,0.8) 100%),url("../assets/bgackground/topbg.jpg");
+            background-position: center center;
+            background-size: cover;
+        }
+        .banner-top .content{
+            height: 100vh;
+            width:700px;
+            padding:0px 20px;
+            display:flex; 
+            flex-direction: column;
+            justify-content:center;
+            color:var(--color2);
+        }
+        .banner-top .content p{
+            text-transform: capitalize;
+            margin-bottom:10px;
+            font-size:18px;
+            font-family: var(--font1);
+        }
+        .banner-top .content h1{
+            font-size:50px;
+            text-transform:uppercase;
+            font-weight:var(--font-w2);
+        }
+        .banner-top .content h2{
+            text-transform: capitalize;
+            margin-top:10px;
+            font-family: var(--font1);
+            font-weight: normal;
+        }
+        .btn-donate{
+            margin-top:20px;
+            color:var(--color2);
+            font-size:18px;
+            border:1px solid var(--color2);
+            background-color:transparent;
+            font-weight: var(--font-w1);
+            transition:0.5s ease-in-out;
+        }
+        .btn-donate:hover{
+            border:1px solid var(--color4);
+            background-color:var(--color4);
+            color:var(--color2);
+        }
+        /* ========Responsive======== */
+            @media(max-width:700px){
+                .banner-top .content{
+                    width: 100%;
+                }
+                .banner-top .content p{
+                    margin-bottom:5px;
+                    font-size:16px;
+                }
+                .banner-top .content h1{
+                    font-size:32px;
+                }
+                .banner-top .content h2{
+                    margin-top:5px;
+                }
+            }
+        /* ======X==Responsive==X====== */
+    /* =======X===Banner Styling====X====== */
+
+    /* ==========About Us Styling========== */
+            .heading h2{
+                text-align: center;
+                font-weight:var(--font-w2);
+                text-transform: uppercase;
+                color:var(--color1);
+            }
+            .heading p{
+                margin-top:8px;
+                font-size:18px;
+                text-align: center;
+                font-weight:var(--font-w1);
+                text-transform: capitalize;
+                color:var(--color3);
+                font-family: var(--font1);
+            }
+            .about-section{
+                align-items: center;
+            }
+            .about-section h3{
+                text-align: center;
+                margin-bottom:20px;
+                font-weight:var(--font-w2);
+                color:var(--color1);
+            }
+            .about-section p, .help-section p{
+                margin-bottom:20px;
+                color:var(--color3);
+                text-align: justify;
+                cursor: pointer;
+                font-weight: var(--font-w1);
+            }
+            /* ========Responsive =====*/
+                @media(max-width:1000px){
+                    .about-section{
+                        flex-direction: column;
+                    }
+                }
+                @media(max-width:500px){
+                    .padding{
+                        padding:25px 0px;
+                    }
+                }
+            /* ======X==Responsive ==X===*/
+    /* ======X====About Us Styling===X======= */
+
+    /* ==========Why Help You Styling========== */
+            .help-section{
+                align-items:center;
+            }
+            /* ========Responsive =====*/
+              @media(max-width:1000px){
+                .help-section{
+                    flex-direction: column;
+                }
+                }
+            /* ======X==Responsive ==X===*/
+    /* =======X===Why Help You Styling====X====== */
+          
+    /* ===========Banner Info Styling========= */
+            .info-ngo{
+                background-color:#EBF5FB;
+            }
+            .info-ngo .info-ngo-body{
+                text-align: center;
+                cursor: pointer;
+            }
+            .info-ngo .info-ngo-body i{
+                font-size: 30px;
+                padding:5px 0px;
+                color: var(--color5);
+            }
+            .info-ngo .info-ngo-body h2{
+                font-weight: var(--font-w2);
+                color: var(--color3);
+                padding:5px 0px;
+            }
+            .info-ngo .info-ngo-body p{
+                font-size:18px;
+                font-weight: var(--font-w2);
+                color: var(--color5);
+                text-transform: uppercase;
+                padding:5px 0px;
+            }
+            /* =======Responsive =====*/
+                @media(max-width:600px){
+                  .ngo-info-row{
+                      flex-direction: column;
+                  }
+                  .sm-mt-2{
+                      margin-top:10px;
+                  }
+                }
+            /* ====X===Responsive ==X===*/
+    /* =======X====Banner Info Styling===X====== */
+    
+    /* ==========Feedback Section Styling========== */
+        .feedback{
+            background-image:linear-gradient(135deg, rgb(245, 247, 250,0.8) 0%, rgb(195, 207, 226,0.8) 100%),url("../assets/bgackground/feedback.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .feedback-row{
+           overflow-x:scroll;
+           scroll-behavior: smooth;
+        }
+        .feedback-row::-webkit-scrollbar{
+            display:none;
+        }
+        .feedback-row .feedback-card{
+            width:300px;
+            display:flex;
+            cursor: pointer;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+            margin:0px 5px;
+        }
+       .feedback-row .feedback-card .img{
+            width:300px;
+            text-align:center;
+       }
+       .feedback-row .feedback-card .info h2{
+            text-align: center;
+            color:var(--color1);
+            font-weight: var(--font-w2);
+            text-transform:capitalize;
+            padding:8px 0px;
+       }
+       .feedback-row .feedback-card .info p{
+            color:var(--color3);
+            font-family: var(--font1);
+            font-weight: var(--font-w1);
+            text-align:center;
+        }
+       .feedback-row .feedback-card .img img{
+           width:100px;
+           object-fit: contain;
+           border-radius: 50%;
+       }
+    /* =======X===Feedback Section Styling===X======= */
+
+    /* ========Banner Next======= */
+       .banner-bottom{
+            padding:50px;
+            text-transform: capitalize;
+            text-align: center;
+            color:var(--color1);
+            font-weight:var(--font-w1);
+            font-family: var(--font1);
+            background-image:linear-gradient(135deg, rgb(245, 247, 250,0.8) 0%, rgb(195, 207, 226,0.8) 100%);
+       }
+       .banner-bottom h1{
+           margin:5px 0px;
+           font-weight: var(--font-w1);
+       }
+       .banner-bottom h2{
+            font-weight: var(--font-w1);
+        }
+        /* ======responsive =====*/
+            @media(max-width:500px) {
+                .banner-bottom{
+                    padding:50px 15px;
+                }
+            }
+        /* ===X===responsive ===X==*/
+    /* ====X====Banner Next====X=== */
+
+    /* ==========Our Voulanter Styling========== */
+        .volenteres{
+            background-image:linear-gradient(135deg, rgb(245, 247, 250,0.8) 0%, rgb(195, 207, 226,0.8) 100%), url(../assets/bgackground/volenteress.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .feedback-row .feedback-card ul li{
+            margin:10px;
+        }
+    /* ========X==Our Voulanter Styling==X======== */
+
+    /* ==========Contact Us Styling========== */
+        .conatct form .form-controal{
+           flex-direction: column;
+        }
+        .conatct form {
+            box-shadow: 0 4px 16px rgba(0 0 0 /10%);
+            padding:25px;
+            border-radius:10px;
+        }
+        .conatct form .form-controal label{
+            color:var(--color1);
+            font-weight: var(--font-w1);
+            text-transform: capitalize;
+            margin:0px 0px 8px 0px;
+        }
+        .conatct form .form-controal input,.conatct form .form-controal textarea{
+            width: 100%;
+            border:1px solid var(--color3);
+            outline:none;
+            border-radius:5px;
+            padding:10px;
+            color:var(--color3);
+            font-weight: var(--font-w1);
+            margin:0px 0px 8px 0px;
+            background-color: var(--color2);
+            box-shadow: 0 4px 16px rgba(0 0 0 /10%);
+        }
+        .conatct form .form-controal input:focus,.conatct form .form-controal textarea:focus{
+            border:1px solid var(--color5);
+        }
+        .conatct .form-btn {
+            margin-top:10px;
+            text-align:center;
+        }
+        .conatct .info-conatct{
+            margin:5px;
+            text-align:center;
+            padding:25px;
+            background-color: var(--color2);
+            box-shadow: 0 4px 16px rgba(0 0 0 /10%);
+            border-radius:10px;
+        }
+        .conatct i{
+            font-size:20px;
+            color:var(--color2);
+            background-color: var(--color5);
+            padding:10px 12px;
+            border-radius:50%;
+            margin-bottom:20px;
+        }
+        .other-c{
+            text-align:center;
+        }
+        .conatct .contact-info-d{
+            margin:5px;
+            flex-basis: 50%;
+            padding:25px;
+            background-color: var(--color2);
+            box-shadow: 0 4px 16px rgba(0 0 0 /10%);
+            border-radius:10px;
+        }
+        /* =======Responsive =====*/
+            @media(max-width:992px){
+              .other-c{
+                    flex-direction: column;
+                }
+            }
+            @media(max-width:600px){
+                .conatct,.other-c{
+                    flex-direction: column;
+                }
+            }
+         /* ====X===Responsive ==X===*/
+    /* =======X===Contact Us Styling===X======= */
+
+    /* ========Footer Section Styling========== */
+        .footer{
+           background: var(--color4)
+        }
+        .row-footer{
+            justify-content:space-around;
+        }
+        .footer .row-footer .footer-logo{
+            margin-top:10px;
+            text-align: center;
+        }
+        .footer .row-footer .footer-logo .nav-brand a{
+            color:var(--color5);
+        }
+        .footer .row-footer h2{
+            text-align: center;
+            color:#ccc;
+            margin-bottom:10px;
+            font-weight: var(--font-w1);
+        }
+        .footer .row-footer .footer-logo ul{
+           justify-content: center;
+           align-items: center;
+           margin:10px;
+        }
+        .footer .row-footer .footer-logo ul li{
+            margin:10px;
+            font-size:25px;
+        }
+        .footer .nav-brand a{
+            font-size:35px;
+            font-family: var(--font1);
+            color:var(--color4);
+            font-weight:bold;
+        }
+        .footer .nav-brand .fa-hands-helping{
+            font-size:40px;
+        }
+        .footer .footer-iteam,.footer .footer-contact{
+            margin-top:10px;
+        }
+        .footer .footer-iteam ul li{
+            margin-bottom:8px;
+            text-align: center;
+        }
+        .footer .footer-iteam ul li a{
+            color:rgba(204, 204, 204, 0.822);
+            font-weight: var(--font-w1);
+            text-transform: capitalize;
+        }
+        .footer .footer-contact ul li{
+            margin-bottom:10px;
+            cursor: pointer;
+        }
+        .footer .footer-contact ul li i{
+            color: var(--color5);
+            font-size:20px;
+        }
+        .footer .footer-contact ul li span{
+            color:rgba(204, 204, 204, 0.822);
+            font-weight: var(--font-w1);
+            margin-left:10px;
+        }
+        .footer .row-developer{
+            padding-top:10px;
+            margin-top:10px;
+            border-top:1px solid var(--color5);
+            text-align: center;
+        }
+        .footer .row-developer p{
+            color:rgba(204, 204, 204, 0.822);
+            font-weight: var(--font-w1);
+            margin-bottom: 3px;
+        }
+        .footer .row-developer a{
+            color:var(--color5);
+            font-weight: var(--font-w1);
+        }
+        .footer .row-developer ul{
+            justify-content:center;
+            text-align: center;
+        }
+        .footer .row-developer ul li i{
+            margin: 10px;
+            font-size:20px;
+        }
+        .footer .row-developer a span{
+            font-size: 20px;
+        }
+         /* =======Responsive =====*/
+            @media(max-width:992px){
+                .row-footer{
+                    flex-direction: column;
+                }
+                .footer .footer-contact ul{
+                    text-align: center;
+                }
+            }
+       /* ====X===Responsive ==X===*/
+    /* ======X==Footer Section Styling==X===== */
+
+/* =========X===Home Page Styling=====X======== */
+
+/* ============Donation Page Styling========== */
+       .donation .form_body{
+           justify-content: center;
+       }
+       .donation .form_body form{
+            flex-basis: 50%;
+            box-shadow: 0 4px 16px rgba(0 0 0 /10%);
+            padding:25px;
+            border-radius:10px;
+       }
+       .donation .form_body .form-controal{
+           flex-direction: column;
+       }
+       .donation .form_body .form-controal label{
+            color:var(--color1);
+            font-weight: var(--font-w1);
+            text-transform: capitalize;
+            margin:0px 0px 8px 0px;
+       }
+       .donation .form_body .form-controal input{
+            width: 100%;
+            border:1px solid var(--color3);
+            outline:none;
+            border-radius:5px;
+            padding:10px;
+            color:var(--color3);
+            font-weight: var(--font-w1);
+            margin:0px 0px 8px 0px;
+            background-color: var(--color2);
+            box-shadow: 0 4px 16px rgba(0 0 0 /10%);
+       }
+       .donation .form_body .form-controal input:focus{
+            border:1px solid var(--color5);
+       }
+       .donation .form_body .form-btn {
+            margin-top:10px;
+            text-align:center;
+        }
+         /* =======Responsive =====*/
+            @media(max-width:992px){
+                .donation .form_body form{
+                   flex-basis: 100%;
+                }
+            }
+         /* ====X===Responsive ==X===*/
+/* ========X====Donation Page Styling=====X===== */
