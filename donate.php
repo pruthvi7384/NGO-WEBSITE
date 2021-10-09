@@ -49,7 +49,7 @@
                 data:"name="+name+"&email="+email+"&donation_amount="+donation_amount+"&phone="+phone,
                 success:function(result){
                     var options = {
-                            "key": "rzp_test_Aj0dkuZlhAmub5", 
+                            "key": "Your ReserPay Api Key", 
                             "amount": donation_amount*100, 
                             "currency": "INR",
                             "name": "NGO DONATION",
